@@ -1,4 +1,4 @@
-# Pinball RS484 architecture
+# Pinball RS485 architecture
 
 ## Hardware
 

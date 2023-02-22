@@ -4,17 +4,36 @@
 
 There is a half-duplex RS485 bus. Bus frequency is 2MHz. 
 
+Connector is a standard RJ45 connector with the following pinout:
+
+|Pin|Usage|
+|---|---|
+|1|RS485 A|
+|2|RS485 B|
+|3|reserved|
+|4|+5V|
+|5|+5V|
+|6|reserved|
+|7|GND|
+|8|GND|
+
++5V/GND is not required, it can be used to power devices from a central node.
+
 ## Adressing
 
 Master uses address 0x00.
-Slave addresses range from 0x01 to 0x7f. adresses higher than this are reserved for future applications.
+Slave addresses range from 0x01 to 0xAF. adresses higher than this are reserved for future applications.
 
-|address|component|remarks|
+|Address|Component|Remarks|
 |---|---|---|
-|0x11|lamp decoder|e.g. Afterglow or similar|
-|0x21|switch decoder||
-|0x31|solenoid decoder||
+|0x00|Master processor||
+|0x11|Lamp decoder|e.g. Afterglow or similar|
+|0x21|Switch decoder||
+|0x31|Solenoid decoder||
 |0x41|DMD decoder||
+|0x51|Sound decoder||
+|0x81-0x8F|Light effects device||
+
 
 ## Line protocol
 
